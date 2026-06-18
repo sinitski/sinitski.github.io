@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinitski - Product Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sinitski: shipping reliable web products with focus on monitoring, performance, and clear user outcomes."
+    />
+    <meta property="og:title" content="Sinitski - Product Engineer Portfolio" />
+    <meta
+      property="og:description"
+      content="Selected projects, technical case studies, and live demos."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sinitski.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-grid" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="wordmark" href="#top">sinitski</a>
+        <nav aria-label="Main navigation" class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <p class="eyebrow">Product Engineer Portfolio</p>
+        <h1>Building calm, reliable web products that earn user trust.</h1>
+        <p class="hero-copy">
+          I design and ship production-ready applications with clear architecture,
+          practical observability, and fast feedback loops.
+        </p>
+
+        <div class="hero-links" role="group" aria-label="SiteWatcher primary links">
+          <a
+            class="btn btn-primary"
+            href="https://sitewatcher-six.vercel.app/?utm_source=portfolio&utm_medium=github_pages&utm_campaign=sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="sitewatcher_demo"
+            >Open Live Demo</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="case-studies/sitewatcher.html"
+            data-track="sitewatcher_case_study"
+            >Read Case Study</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/sinitski/sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="sitewatcher_repo"
+            >View Source on GitHub</a
+          >
+        </div>
+      </section>
+
+      <section id="work" class="container section-block">
+        <div class="section-head">
+          <p class="eyebrow">Selected Work</p>
+          <h2>SiteWatcher</h2>
+        </div>
+
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="pill">FastAPI</span>
+            <span class="pill">React</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Docker</span>
+          </div>
+          <p>
+            Telegram-native uptime monitoring with AI hints and email alerts.
+            Built to reduce alert noise while keeping incident response fast.
+          </p>
+          <ul class="results-list">
+            <li>Asynchronous check engine with scheduler-based polling</li>
+            <li>Down/recovered/slow/content-change alert model with cooldowns</li>
+            <li>Public status page and enterprise-ready foundations</li>
+          </ul>
+
+          <div class="project-links" role="group" aria-label="SiteWatcher project links">
+            <a
+              class="btn btn-primary"
+              href="https://sitewatcher-six.vercel.app/?utm_source=portfolio&utm_medium=github_pages&utm_campaign=sitewatcher_project_card"
+              target="_blank"
+              rel="noreferrer"
+              data-track="sitewatcher_demo_card"
+              >Live Demo</a
+            >
+            <a
+              class="btn btn-secondary"
+              href="case-studies/sitewatcher.html"
+              data-track="sitewatcher_case_study_card"
+              >Case Study</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/sinitski/sitewatcher"
+              target="_blank"
+              rel="noreferrer"
+              data-track="sitewatcher_repo_card"
+              >Repository</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <section id="about" class="container section-block about-block">
+        <div class="section-head">
+          <p class="eyebrow">About</p>
+          <h2>How I work</h2>
+        </div>
+        <p>
+          I focus on resilient backend systems, opinionated UX, and measurable
+          outcomes. I prefer small, testable increments and transparent technical
+          tradeoffs.
+        </p>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-wrap">
+        <p>Open to product-focused engineering roles and contract work.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sinitski" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:esinitsky@gmail.com">esinitsky@gmail.com</a>
+          <a href="case-studies/sitewatcher.html">Case Study</a>
+        </div>
+        <p class="tiny">&copy; <span id="year"></span> Sinitski</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

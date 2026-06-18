@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SiteWatcher Case Study | Sinitski</title>
+    <meta
+      name="description"
+      content="Case study for SiteWatcher: architecture choices, constraints, implementation details, and results."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      main {
+        padding: 3rem 0 4rem;
+      }
+
+      .case-wrapper {
+        width: min(100% - 2rem, 840px);
+        margin-inline: auto;
+      }
+
+      .case-section {
+        background: rgba(255, 250, 241, 0.85);
+        border: 1.5px solid rgba(44, 36, 30, 0.22);
+        border-radius: 16px;
+        padding: 1.1rem 1.2rem;
+        margin: 0.9rem 0;
+      }
+
+      .case-section h2 {
+        margin-top: 0;
+      }
+
+      .case-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1.1rem 0;
+      }
+
+      @media (max-width: 720px) {
+        .case-links {
+          flex-direction: column;
+        }
+
+        .case-links .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="wordmark" href="../index.html">sinitski</a>
+        <nav aria-label="Case study navigation" class="nav-links">
+          <a href="../index.html#work">Back to Work</a>
+          <a href="#bottom">Bottom Links</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="case-wrapper">
+        <p class="eyebrow">Case Study</p>
+        <h1>SiteWatcher</h1>
+        <p class="hero-copy">
+          Telegram-native website uptime monitoring with AI hints and optional
+          email alerts. Designed for practical reliability in small teams.
+        </p>
+
+        <div class="case-links" role="group" aria-label="Case study primary links">
+          <a
+            class="btn btn-primary"
+            href="https://sitewatcher-six.vercel.app/?utm_source=case_study&utm_medium=github_pages&utm_campaign=sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="case_study_demo"
+            >Open Live Demo</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/sinitski/sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="case_study_repo"
+            >View Source on GitHub</a
+          >
+        </div>
+
+        <section class="case-section">
+          <h2>Problem</h2>
+          <p>
+            Teams need immediate outage visibility, but many monitoring tools are
+            noisy, expensive, or too heavy for small projects.
+          </p>
+        </section>
+
+        <section class="case-section">
+          <h2>Constraints</h2>
+          <ul>
+            <li>Freemium limits required strict resource control</li>
+            <li>Alert fatigue had to be minimized with cooldowns and retries</li>
+            <li>Stack needed to stay simple to deploy on commodity infrastructure</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <h2>Architecture</h2>
+          <ul>
+            <li>Backend: FastAPI with async SQLAlchemy and PostgreSQL</li>
+            <li>Check engine: scheduler-triggered async HTTP checks</li>
+            <li>Notifications: Telegram Bot API plus optional Gmail alerts</li>
+            <li>Frontend: React dashboard for sites, logs, and alert settings</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <h2>Key decisions</h2>
+          <ul>
+            <li>Used async checks to scale concurrent probes efficiently</li>
+            <li>Added retry and cooldown policy to reduce false-positive noise</li>
+            <li>Stored check history to support trend visibility and debugging</li>
+            <li>Exposed health and status endpoints for transparent operations</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <h2>Results</h2>
+          <ul>
+            <li>Fast down/recovered notifications through Telegram delivery</li>
+            <li>Clearer operator confidence from historical check logs</li>
+            <li>Single-project to multi-site path via free/pro plan model</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <h2>Tradeoffs and next steps</h2>
+          <ul>
+            <li>Add multi-region checks with region-aware incident aggregation</li>
+            <li>Improve anomaly detection for response-time regressions</li>
+            <li>Expand integrations (Slack, webhooks, and incident workflows)</li>
+          </ul>
+        </section>
+
+        <div id="bottom" class="case-links" role="group" aria-label="Case study bottom links">
+          <a
+            class="btn btn-primary"
+            href="https://sitewatcher-six.vercel.app/?utm_source=case_study_bottom&utm_medium=github_pages&utm_campaign=sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="case_study_bottom_demo"
+            >Live Demo</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="../index.html"
+            data-track="case_study_bottom_home"
+            >Back to Portfolio</a
+          >
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/sinitski/sitewatcher"
+            target="_blank"
+            rel="noreferrer"
+            data-track="case_study_bottom_repo"
+            >Repository</a
+          >
+        </div>
+      </article>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
